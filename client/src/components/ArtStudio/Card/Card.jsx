@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
+import Btn from "../Btn/Btn";
 
 import "./Card.css";
 
@@ -65,12 +65,7 @@ class Card extends Component {
             </div>
           </div>
           <div className="btn bg-Btn w-48 h-12  mt-12 text-white text-center font-bold z-20 relative">
-            <Link
-              to="/booking"
-              className="flex justify-center items-center w-full h-full block box-border"
-            >
-              <span>Бронировать</span>
-            </Link>
+            <Btn text="Бронировать" to="/booking" />
           </div>
         </div>
         <Modal

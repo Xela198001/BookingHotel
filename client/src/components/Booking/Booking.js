@@ -1,5 +1,6 @@
 import React from "react";
 import EmptyBox from "./EmptyBox";
+import Details from "../Details/Details";
 
 const Booking = () => {
   return (
@@ -7,6 +8,7 @@ const Booking = () => {
       <div className="container">
         <div className="pt-8 flex">
           <EmptyBox />
+          <Details />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
 import HideButton from "../HideButton/HideButton";
 import ListItem from "../ListItem/ListItem";
+import Btn from "../Btn/Btn";
 import "./Modal.css";
 
 class Modal extends Component {
@@ -93,12 +93,7 @@ class Modal extends Component {
                   </div>
                   <div className="w-full h-16"></div>
                   <div className="btn modal-btn bg-Btn h-12 text-white text-center font-bold z-20 fixed right-0 bottom-0 shadow-sm">
-                    <Link
-                      to="/booking"
-                      className="flex justify-center items-center w-full h-full block box-border"
-                    >
-                      <span>Бронировать</span>
-                    </Link>
+                    <Btn text="Бронировать" to="/booking" />
                   </div>
                 </div>
               </div>
