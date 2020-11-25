@@ -6,9 +6,9 @@ class Btn extends Component {
     super(props);
     this.state = {
       classCard:
-        "btn bg-Btn w-48 h-12  mt-12 text-white text-center font-bold z-20 relative",
+        "btn bg-btn-gold w-48 h-12  mt-12 text-white text-center font-bold z-20 relative",
       classModal:
-        "btn bg-Btn w-48 h-12  mt-12 text-white text-center font-bold z-20 relative",
+        "btn bg-btn-gold w-48 h-12  mt-12 text-white text-center font-bold z-20 relative",
     };
   }
   render() {

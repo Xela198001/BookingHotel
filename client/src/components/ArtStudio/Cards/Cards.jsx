@@ -20,7 +20,6 @@ class Cards extends Component {
             <Card
               item={item}
               handleClick={this.props.handleClick}
-              visibility={this.state.visible}
               key={item.id}
             />
           ))}

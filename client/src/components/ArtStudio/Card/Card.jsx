@@ -13,13 +13,10 @@ class Card extends Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
 
-  toggleModal() {
-    this.setState({
-      visible: !this.state.visible,
-    });
-  }
+  
 
   render() {
+    console.log(this.state.visible)
     return (
       <div className="flex-1 text-left px-2 py-1 m-1" key={this.props.item.id}>
         <div className="card group relative box-border z-10">

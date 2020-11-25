@@ -1,18 +1,33 @@
 import React, { Component } from "react";
-
-import Card from "../ArtStudio/Card/Card";
+// import Card from "../ArtStudio/Card/Card";
 import Items from "../ArtStudio/Cards/Items";
-import AudioVideo from "./Description/AudioVideo/AudioVideo";
-import Beds from "./Description/beds/beds";
-import Bathroom from "./Description/bathroom";
-import Communication from "./Description/communication";
-import Electronics from "./Description/electronics";
-import Etc from "./Description/etc";
-import Furniture from "./Description/furniture/furniture";
-import ViewWindow from "./Description/viewWindow/viewWindow";
+import ListItems from "./Description/ListItems/ListItems";
+import ListItem from "./Description/ListItems/ListItem";
 
 class Details extends Component {
-  state = {  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false,
+      vis: 1,
+    };
+    this.toggleModal = this.toggleModal.bind(this);
+    this.loadItem = this.loadItem.bind(this);
+  }
+
+  toggleModal() {
+    this.setState({
+      visible: !this.state.visible,
+    });
+  }
+
+  loadItem = () => {
+    this.setState({
+      vis: this.state.vis + 1,
+    });
+    console.log(this.state.vis);
+  };
+
   render() {
     return (
       <div className="container">
@@ -21,23 +36,59 @@ class Details extends Component {
           <div className="details-body">
             <div></div>
             <div></div>
-            <div className="details-description">
+            <div
+              className="details-description"
+                // onClick={() => {
+                //   this.load()
+                // }}
+            >
               <div></div>
               <div>
-                <AudioVideo />
-                <Bathroom />
-                <Beds />
-                <Communication />
-                <Electronics />
-                <Etc />
-                <Furniture />
-                <ViewWindow />
+                {Items.map((item, index) => (
+                  <>
+                    <ListItems
+                      list="Аудио/Видео"
+                      items={item.details}
+                      key={index}
+                      handleClick={this.toggleModal}
+                      visibility={this.state.visible}
+                      load={this.loadItem}
+                    />
+                    {/* <ListItems
+                      list="Интернет/Телефония"
+                      item={item.details.map((item) => item.communication)}
+                    />
+                    <ListItems
+                      list="Электроника"
+                      item={item.details.map((item) => item.electronics)}
+                    />
+                    <ListItems
+                      list="ванная комната"
+                      item={item.details.map((item) => item.bathroom)}
+                    />
+                    <ListItems
+                      list="Внешняя территория и вид из окон"
+                      item={item.details.map((item) => item.viewWindow)}
+                    />
+                    <ListItems
+                      list="Кровати"
+                      item={item.details.map((item) => item.bed)}
+                    />
+                    <ListItems
+                      list="Мебель"
+                      item={item.details.map((item) => item.furniture)}
+                    />
+                    <ListItems
+                      list="Прочее"
+                      item={item.details.map((item) => item.etc)}
+                    /> */}
+                  </>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-      
     );
   }
 }
