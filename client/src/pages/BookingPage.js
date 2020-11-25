@@ -1,14 +1,12 @@
 import React from "react";
 import Booking from "../components/Booking";
-import Footer from "../components/Footer";
-import HeaderBrown from "../components/HeaderBrown";
+import Header from "../components/Header";
 
 const BookingPage = () => {
   return (
     <>
-      <HeaderBrown />
+      <Header title="Заявка на бронирование" />
       <Booking />
-      <Footer />
     </>
   );
 };

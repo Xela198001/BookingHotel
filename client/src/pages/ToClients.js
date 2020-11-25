@@ -1,18 +1,14 @@
-import React from 'react';
+import React from "react";
 import Header from "../components/Header";
-import ClientsSection from "../components/Clients/ClientsSection"
-import ClientsHero from "../components/Clients/ClientsHero"
-import Footer from "../components/Footer"
+import ClientsSection from "../components/Clients/ClientsSection";
 
 function ToClients() {
-    return (
-        <div id="ToClientsPage">
-            <Header/>
-            <ClientsHero/>
-            <ClientsSection/>
-            <Footer />
-        </div>
-    );
+  return (
+    <>
+      <Header bgHeader="header-bg-3" mainTitle="Корпоративная аренда квартир" />
+      <ClientsSection />
+    </>
+  );
 }
 
 export default ToClients;
