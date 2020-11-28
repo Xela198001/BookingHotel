@@ -8,8 +8,8 @@ const Booking = () => {
       <div className="container">
         <div className="pt-8 flex">
           <EmptyBox />
-          <Details />
         </div>
+        <Details />
       </div>
     </div>
   );

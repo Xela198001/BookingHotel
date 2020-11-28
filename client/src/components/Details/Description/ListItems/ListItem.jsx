@@ -4,31 +4,49 @@ class ListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      vis: 1,
-      visible: false,
+      item: "",
     };
-    // this.load = this.load.bind(this);
+    this.load = this.load.bind(this);
+    this.handleHide = this.handleHide.bind(this);
     // this.state.visible ? console.log(this.state.visible) : console.log("Нет");
   }
 
-  // componentDidMount() {
+  // componentWillUnmount() {
   //   this.load()
   // }
 
-  
+  // componentDidUpdate() {
+  //   this.load()
+  // }
+
+  // handleShow() {
+  //   this.setState({
+  //     visible: !this.state.visible
+  //   });
+      
+  // }
+
+  handleHide = (visible) => {
+    visible = false;
+
+  }
+
+  load = () => {
+    this.setState({
+item: this.props.items
+    })
+  }
+
+
 
   render() {
+    let visible = this.props.visibility;
     return (
-      <div className="w-full h-full" onClick={this.props.handleClick}>
-        <ul>
-          {/* {console.log(this.props.visibility)} */}
-          {this.props.visibility ? this.load : "null"}
-          {/* {console.log(this.props.items)} */}
-          {/* {this.props.item.map((item, index) => (
-           <li key={index}>{item}</li>
-        ))} */}
-        </ul>
-      </div>
+      <>
+        {visible
+          ? <ul className="block w-full h-full" onClick={this.handleHide(visible)}>{this.props.items.list.map((list) => <li>{list}</li>)}</ul>
+          : null}
+      </>
     );
   }
 }

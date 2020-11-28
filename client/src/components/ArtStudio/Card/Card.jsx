@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
-import Btn from "../Btn/Btn";
 
 import "./Card.css";
 
@@ -13,15 +13,18 @@ class Card extends Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
 
-  
+  toggleModal() {
+    this.setState({
+      visible: !this.state.visible,
+    });
+  }
 
   render() {
-    console.log(this.state.visible)
     return (
       <div className="flex-1 text-left px-2 py-1 m-1" key={this.props.item.id}>
         <div className="card group relative box-border z-10">
           <div
-            className="card__photo relative"
+            className="card__photo relative cursor-pointer"
             onClick={() => {
               this.toggleModal();
             }}
@@ -61,8 +64,13 @@ class Card extends Component {
               </ul>
             </div>
           </div>
-          <div className="btn bg-Btn w-48 h-12  mt-12 text-white text-center font-bold z-20 relative">
-            <Btn text="Бронировать" to="/booking" />
+          <div className="btn bg-btnGold w-48 h-12  mt-12 text-white text-center font-bold z-20 relative">
+            <Link
+              to="/booking"
+              className="flex justify-center items-center w-full h-full block box-border"
+            >
+              <span>Бронировать</span>
+            </Link>
           </div>
         </div>
         <Modal
